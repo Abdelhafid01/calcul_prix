@@ -227,6 +227,21 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+      <form>
+        <label>Product Price :</label>&nbsp;<input #productPrice type="number" min="0">&nbsp;<input type="button" value="Next product price (+)" (click)="add()" />
+        <br />
+        <label>Somme payée :</label><div><input #sommePayee type="number" min="0"></div>
+        <input type="button" value="Calculate" (click)="addition()" />&nbsp;<input type="button" value="Reset" (click)="reset()" />
+        <br />
+        <label>Total : {{ total }}</label>
+        <br />
+        <label>Rendu : {{ this.rendu }}</label>
+        @for (item of list; track $index) {
+          <li>
+            {{ item }}
+          </li>
+        }
+      </form>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
